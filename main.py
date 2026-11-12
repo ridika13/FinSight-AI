@@ -88,7 +88,7 @@ Question:
             try:
                 response = llm.invoke(prompt)
 
-                st.header("Answer")
+                st.header("FinSight Insights 📊")
                 st.write(response.content)
 
                 sources = list(dict.fromkeys(
