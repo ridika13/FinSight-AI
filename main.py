@@ -57,7 +57,7 @@ if process_url_clicked:
     with open(file_path, "wb") as f:
         pickle.dump(vectorstore_openai, f)
 
-query = main_placeholder.text_input("Question: ")
+query = main_placeholder.text_input("Ask a question about the articles:")
 
 if query:
     if os.path.exists(file_path):
