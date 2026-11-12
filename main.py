@@ -50,7 +50,7 @@ if process_url_clicked:
     model_name="sentence-transformers/all-MiniLM-L6-v2"
     )
     vectorstore_openai = FAISS.from_documents(docs, embeddings)
-    main_placeholder.text("Embedding Vector Started Building...✅✅✅")
+    main_placeholder.success("Article embeddings generated successfully! ✅")
     time.sleep(2)
 
     # Save the FAISS index to a pickle file
