@@ -19,10 +19,7 @@ st.set_page_config(
 )
 
 st.title("FinSight – AI-Powered Financial News Intelligence 📈")
-st.markdown(
-    "Your intelligent workspace for researching financial news, "
-    "extracting insights, and exploring market developments."
-)
+st.markdown("Research financial news, explore market trends, and get AI-powered insights.")
 st.sidebar.title("FinSight | Research Sources")
 
 urls = []
