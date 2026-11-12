@@ -10,12 +10,12 @@ You can add article URLs, process their content, and ask questions about the inf
 
 - Add up to three news article URLs through the Streamlit sidebar.
 - Extract article content using LangChain's `UnstructuredURLLoader`.
-- Split the extracted content into smaller chunks for better retrieval.
-- Generate text embeddings using Hugging Face's Sentence Transformers.
+- Split extracted content into smaller chunks for better retrieval.
+- Generate text embeddings using Hugging Face Sentence Transformers.
 - Store and search relevant information using FAISS vector search.
-- Ask questions about the processed articles.
+- Ask questions about processed articles.
 - Generate AI-powered answers using Google's Gemini model.
-- Display source references alongside the generated answers.
+- Display source references alongside generated answers.
 
 ## Tech Stack
 
@@ -25,6 +25,17 @@ You can add article URLs, process their content, and ask questions about the inf
 - **Google Gemini** – Answer generation
 - **Hugging Face Sentence Transformers** – Text embeddings
 - **FAISS** – Vector storage and similarity search
+
+## How It Works
+
+FinSight follows a Retrieval-Augmented Generation (RAG) workflow:
+
+1. Article URLs are provided by the user.
+2. LangChain extracts the article content.
+3. The extracted text is split into smaller chunks.
+4. Hugging Face generates embeddings for the text.
+5. FAISS stores the embeddings and retrieves relevant content based on a question.
+6. Gemini uses the retrieved information to generate an answer with source references.
 
 ## Getting Started
 
@@ -51,7 +62,7 @@ GOOGLE_API_KEY=your_google_api_key_here
 
 You can obtain an API key from [Google AI Studio](https://aistudio.google.com/apikey).
 
-Keep your `.env` file private. Do not upload API keys to GitHub.
+Keep your `.env` file private. Never upload API keys to GitHub.
 
 ### 4. Run the application
 
@@ -63,12 +74,11 @@ The application will open in your browser.
 
 ## How to Use
 
-1. Enter financial news article URLs in the sidebar.
-2. Click **Process URLs** to start extracting and processing the articles.
-3. FinSight splits the content into smaller chunks and generates embeddings.
-4. The resulting vectors are stored in a FAISS index.
-5. Enter a question in the question field.
-6. View the generated answer and the sources used to retrieve the information.
+1. Enter up to three financial news article URLs in the sidebar.
+2. Click **Process URLs** to extract and process the articles.
+3. Wait for the text splitting and embedding process to finish.
+4. Enter a question in the question field.
+5. View the generated answer and its source references.
 
 ## Project Structure
 
@@ -98,4 +108,3 @@ FinSight-AI/
 ## Acknowledgement
 
 This project was developed as a learning project based on the LangChain and News Research Tool tutorials by [Codebasics](https://github.com/codebasics/langchain), with modifications including Gemini integration, Hugging Face embeddings, and the FinSight interface.
-
