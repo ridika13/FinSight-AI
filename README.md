@@ -1,68 +1,101 @@
+# FinSight – AI-Powered Financial News Intelligence 📈
 
-# RockyBot: News Research Tool 
+FinSight is a news research tool I built to make it easier to explore financial news and understand what's happening in the market.
 
-RockyBot is a user-friendly news research tool designed for effortless information retrieval. Users can input article URLs and ask questions to receive relevant insights from the stock market and financial domain.
+You can add article URLs, process their content, and ask questions about the information in those articles. Instead of going through multiple articles manually, FinSight retrieves relevant information and generates answers with source references.
 
-![](rockybot.jpg)
+![FinSight](FinSight.jpg)
 
 ## Features
 
-- Load URLs or upload text files containing URLs to fetch article content.
-- Process article content through LangChain's UnstructuredURL Loader
-- Construct an embedding vector using OpenAI's embeddings and leverage FAISS, a powerful similarity search library, to enable swift and effective retrieval of relevant information
-- Interact with the LLM's (Chatgpt) by inputting queries and receiving answers along with source URLs.
+- Add up to three news article URLs through the Streamlit sidebar.
+- Extract article content using LangChain's `UnstructuredURLLoader`.
+- Split the extracted content into smaller chunks for better retrieval.
+- Generate text embeddings using Hugging Face's Sentence Transformers.
+- Store and search relevant information using FAISS vector search.
+- Ask questions about the processed articles.
+- Generate AI-powered answers using Google's Gemini model.
+- Display source references alongside the generated answers.
 
+## Tech Stack
 
-## Installation
+- **Python** – Core programming language
+- **Streamlit** – Web application interface
+- **LangChain** – Document processing and retrieval workflow
+- **Google Gemini** – Answer generation
+- **Hugging Face Sentence Transformers** – Text embeddings
+- **FAISS** – Vector storage and similarity search
 
-1.Clone this repository to your local machine using:
+## Getting Started
 
-```bash
-  git clone https://github.com/codebasics/langchain.git
-```
-2.Navigate to the project directory:
-
-```bash
-  cd 2_news_research_tool_project
-```
-3. Install the required dependencies using pip:
-
-```bash
-  pip install -r requirements.txt
-```
-4.Set up your OpenAI API key by creating a .env file in the project root and adding your API
+### 1. Clone the repository
 
 ```bash
-  OPENAI_API_KEY=your_api_key_here
+git clone https://github.com/ridika13/FinSight-AI.git
+cd FinSight-AI
 ```
-## Usage/Examples
 
-1. Run the Streamlit app by executing:
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Configure your API key
+
+Create a `.env` file in the project root and add your Google Gemini API key:
+
+```env
+GOOGLE_API_KEY=your_google_api_key_here
+```
+
+You can obtain an API key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+Keep your `.env` file private. Do not upload API keys to GitHub.
+
+### 4. Run the application
+
 ```bash
 streamlit run main.py
-
 ```
 
-2.The web app will open in your browser.
+The application will open in your browser.
 
-- On the sidebar, you can input URLs directly.
+## How to Use
 
-- Initiate the data loading and processing by clicking "Process URLs."
-
-- Observe the system as it performs text splitting, generates embedding vectors, and efficiently indexes them using FAISS.
-
-- The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
-
-- The FAISS index will be saved in a local file path in pickle format for future use.
-- One can now ask a question and get the answer based on those news articles
-- In video tutorial, we used following news articles
-  - https://www.moneycontrol.com/news/business/tata-motors-mahindra-gain-certificates-for-production-linked-payouts-11281691.html
-  - https://www.moneycontrol.com/news/business/tata-motors-launches-punch-icng-price-starts-at-rs-7-1-lakh-11098751.html
-  - https://www.moneycontrol.com/news/business/stocks/buy-tata-motors-target-of-rs-743-kr-choksey-11080811.html
+1. Enter financial news article URLs in the sidebar.
+2. Click **Process URLs** to start extracting and processing the articles.
+3. FinSight splits the content into smaller chunks and generates embeddings.
+4. The resulting vectors are stored in a FAISS index.
+5. Enter a question in the question field.
+6. View the generated answer and the sources used to retrieve the information.
 
 ## Project Structure
 
-- main.py: The main Streamlit application script.
-- requirements.txt: A list of required Python packages for the project.
-- faiss_store_openai.pkl: A pickle file to store the FAISS index.
-- .env: Configuration file for storing your OpenAI API key.
+```text
+FinSight-AI/
+│
+├── main.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── LICENSE
+├── FinSight.jpg
+│
+└── notebooks/
+    ├── retrieval.ipynb
+    ├── faiss_tutorial.ipynb
+    └── text_loaders_splitters.ipynb
+```
+
+## Future Improvements
+
+- Support for uploading documents alongside article URLs.
+- Improved handling of websites that restrict automated content extraction.
+- Better source organization and research history.
+- Additional financial news analysis features.
+
+## Acknowledgement
+
+This project was developed as a learning project based on the LangChain and News Research Tool tutorials by [Codebasics](https://github.com/codebasics/langchain), with modifications including Gemini integration, Hugging Face embeddings, and the FinSight interface.
+
