@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 load_dotenv()  # take environment variables from .env (especially openai api key)
 
 st.set_page_config(
-    page_title="FinSight",
+    page_title="FinSight | Financial News",
     page_icon="📈",
     layout="wide"
 )
