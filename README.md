@@ -104,7 +104,3 @@ FinSight-AI/
 - Improved handling of websites that restrict automated content extraction.
 - Better source organization and research history.
 - Additional financial news analysis features.
-
-## Acknowledgement
-
-This project was developed as a learning project based on the LangChain and News Research Tool tutorials by [Codebasics](https://github.com/codebasics/langchain), with modifications including Gemini integration, Hugging Face embeddings, and the FinSight interface.
