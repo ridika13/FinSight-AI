@@ -102,5 +102,5 @@ FinSight-AI/
 
 - Support for uploading documents alongside article URLs.
 - Improved handling of websites that restrict automated content extraction.
-- Better source organization and research history.
+- Better source organization along with research history.
 - Additional financial news analysis features.
